@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="fatherName" placeholder="Father Name" required>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="text" id="nationality" placeholder="Nationality" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="education" placeholder="Education" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const fatherName = document.getElementById('fatherName').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+            const nationality = document.getElementById('nationality').value;
+            const phone = document.getElementById('phone').value;
+            const education = document.getElementById('education').value;
+
+            const message = `
+                First Name: ${firstName}
+                Father Name: ${fatherName}
+                Date of Birth: ${dob}
+                Gender: ${gender}
+                Nationality: ${nationality}
+                Phone: ${phone}
+                Education: ${education}
+            `;
+
+            // For demonstration purposes: replace this with your email handling
+            console.log("Sending to email and Telegram:", message);
+            alert("Form submitted! Your data has been sent.");
+
+            // Here you would typically send the data using a service
+        });
+    </script>
+</body>
+</html>
